@@ -13,7 +13,7 @@ RUN echo "# Install common dev dependencies 2 via apt" && \
     apt-get clean
 RUN echo "# Install common dev dependencies 3 via apt" && \
       apt-get install -y \
-      openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev && \
+      openssl libreadline libreadline-dev zlib1g zlib1g-dev libssl-dev && \
     apt-get clean
 RUN echo "# Install common dev dependencies 4 via apt" && \
       apt-get install -y \
