@@ -3,13 +3,28 @@ FROM ruby:2.5.1
 RUN echo "# Upgrade apt" && \
     sed -i 's/main$/main contrib/g' /etc/apt/sources.list && \
     apt-get update -qy && \
-    echo "# Install common dev dependencies via apt" && \
+    echo "# Install common dev dependencies 1 via apt" && \
       apt-get install -y \
-      git curl wget rsync patch build-essential \
-      imagemagick libmagickwand-dev libfreetype6-dev libfreetype6 libfontconfig \
-      openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev \
-      libyaml-dev libpq-dev libxml2-dev libxslt-dev libc6-dev postgresql-client \
-      libqtwebkit-dev qt4-qmake xvfb bzip2 locales \
+      git curl wget rsync patch build-essential && \
+    apt-get clean
+    echo "# Install common dev dependencies 2 via apt" && \
+      apt-get install -y \
+      imagemagick libmagickwand-dev libfreetype6-dev libfreetype6 libfontconfig && \
+    apt-get clean
+    echo "# Install common dev dependencies 3 via apt" && \
+      apt-get install -y \
+      openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev && \
+    apt-get clean
+    echo "# Install common dev dependencies 4 via apt" && \
+      apt-get install -y \
+      libyaml-dev libpq-dev libxml2-dev libxslt-dev libc6-dev postgresql-client && \
+    apt-get clean
+    echo "# Install common dev dependencies 5 via apt" && \
+      apt-get install -y \
+      libqtwebkit-dev qt4-qmake xvfb bzip2 locales && \
+    apt-get clean
+    echo "# Install common dev dependencies 6 via apt" && \
+      apt-get install -y \
       libssl-dev libxrender-dev wget && \
     apt-get clean
 
