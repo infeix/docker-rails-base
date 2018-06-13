@@ -1,4 +1,4 @@
-FROM ruby:2.3.1
+FROM ruby:2.5.1
 
 RUN echo "# Upgrade apt" && \
     sed -i 's/main$/main contrib/g' /etc/apt/sources.list && \
